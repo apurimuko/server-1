@@ -29,7 +29,8 @@
         async fetchData() {
           const res = await fetch("data.json");
           const chu = await res.json();
-          console.log(JSON.stringify(chu, null, 2));
+          const data = obj.list;
+          console.log(JSON.stringify(data, null, 2));
         },
       };
     }
