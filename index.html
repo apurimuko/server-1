@@ -31,6 +31,27 @@
           const chu = await res.json();
           const data = chu.list;
           console.log(JSON.stringify(data, null, 2));
+
+          const table = document.createElement("table");
+          document.body.appendChild(table);
+
+          const record = document.createElement("tr");
+          table.appendChild(record);
+          for (const category of ["名前", "タイプ", "重さ", "特性"]) {
+            const header = document.createElement("th");
+            header.textContent = category;
+            record.appendChild(header);
+          }
+
+          for (const item of data) {
+            const record = document.createElement("tr");
+            table.append(record);
+            for (const d in item) {
+              const cell = document.createElement("td");
+              cell.textContent = item[d];
+              record.appendChild(cell);
+            }
+          }
         },
       };
     }
