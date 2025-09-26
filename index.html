@@ -20,7 +20,7 @@
     <p>
       <button @click="fetchData">データ取得</button>
     </p>
-    <p>{{chu}}</p>
+    <p>{{r}}</p>
   </body>
   <script>
     function dataset() {
@@ -29,7 +29,7 @@
         async fetchData() {
           const res = await fetch("data.json");
           const chu = await res.json();
-          console.log(JSON.stringify(chu, null, 2));
+          const r = console.log(JSON.stringify(chu, null, 2));
         },
       };
     }
