@@ -20,13 +20,17 @@
     <p>
       <button @click="fetchData">データ取得</button>
     </p>
+    <p>{{chu}}</p>
   </body>
   <script>
     function dataset() {
       return {
         data: false,
         async fetchData() {
-        }
+          const res = await fetch("data.json");
+          const chu = await res.json();
+          console.log(JSON.stringify(chu, null, 2));
+        },
       };
     }
   </script>
